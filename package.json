@@ -1,0 +1,25 @@
+{
+  "name": "dominikschreiber.com",
+  "description": "portfolio website of Dominik Schreiber, frontend-dev near Ludwigshafen, Germany",
+  "author": "Dominik Schreiber <dominik@dominikschreiber.com>",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Dominik Schreiber",
+      "email": "dominik@dominikschreiber.com",
+      "twitter": "@domischreib"
+    }
+  ],
+  "dependencies": {
+    "grunt": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-less": "*",
+    "grunt-html-smoosher": "*",
+    "grunt-contrib-copy": "*"
+  }
+}

@@ -1,0 +1,39 @@
+.responsive-image( @filename, @filetype, @responsive-breakpoints, @responsive-postfixes, @hidpi-postfix ) {
+  @amount: length(@responsive-breakpoints);
+
+  .loop(@index) when (@index = @amount) {
+    @breakpoint: extract(@responsive-breakpoints, @index);
+    @nextBreakpoint: '99999px';
+    @postfix: extract(@responsive-postfixes, @index);
+
+    @media screen and (min-width: ~"@{breakpoint}") and (max-width: ~"@{nextBreakpoint}") {
+      .hidpi-image(~"@{filename}@{postfix}@{filetype}", ~"@{filename}@{postfix}@{hidpi-postfix}@{filetype}");
+    }
+  }
+  .loop(@index) when (@index < @amount) {
+    @breakpoint: extract(@responsive-breakpoints, @index);
+    @nextBreakpoint: extract(@responsive-breakpoints, (@index + 1));
+    @postfix: extract(@responsive-postfixes, @index);
+    
+    @media screen and (min-width: ~"@{breakpoint}") and (max-width: ~"@{nextBreakpoint}") {
+      .hidpi-image(~"@{filename}@{postfix}@{filetype}", ~"@{filename}@{postfix}@{hidpi-postfix}@{filetype}");
+    }
+    .loop(@index + 1);
+  }
+  .loop( 1 );
+}
+
+.hidpi-image(@normal, @hidpi) {
+  background-image: url(~"@{normal}");
+
+  @media
+     (min--moz-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+     (-moz-min-device-pixel-ratio: 2),
+       (-o-min-device-pixel-ratio: 2),
+          (min-device-pixel-ratio: 2),
+             (min-resolution: 192dpi),
+              (min-resolution: 2dppx) {
+    background-image: url(~"@{hidpi}");
+  }
+}
