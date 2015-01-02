@@ -10,16 +10,22 @@
       "twitter": "@domischreib"
     }
   ],
+  "scripts": {
+    "start": "./node_modules/.bin/grunt"
+  },
   "dependencies": {
     "grunt": "*"
   },
   "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
     "grunt-html-smoosher": "*",
-    "grunt-contrib-copy": "*"
+    "load-grunt-tasks": "^2.0.0"
   }
 }
