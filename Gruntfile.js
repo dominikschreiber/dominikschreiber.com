@@ -10,6 +10,7 @@ module.exports = function(grunt) {
         },
         
         clean: {
+            html: ['<%= dir.target %>/index.html'],
             less: ['<%= dir.target %>/css'],
             js: ['<%= dir.target %>/js'],
             img: ['<%= dir.target %>/img']
