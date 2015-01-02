@@ -86,6 +86,7 @@ a,
 	border-bottom: none;
 	color: @foreground;
 	margin: 0;
+    .box-shadow(0 2px 2px fade(@black, 50%));
 
 	.navbar-toggle {
 		border-color: @foreground;
@@ -249,6 +250,14 @@ a,
 	#footer h3 { font-size: 20px }
 	.col-lg-offset-r-0 { margin-right: 0 }
 }
+
+.box-shadow(@shadow) {
+    -webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;
+        -ms-box-shadow: @shadow;
+         -o-box-shadow: @shadow;
+            box-shadow: @shadow;
+} 
 
 .linear-gradient(@direction; @from; @to) {
 	background-image: -webkit-linear-gradient(@direction, @from, @to);
